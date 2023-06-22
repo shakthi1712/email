@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emaivalidation</title>
+    <style>
+        body{
+            background-color: rgb(223, 248, 248);
+        }
+        main{
+            padding: 50px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .email{
+            width:fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            border:1px solid rgb(194, 185, 185);
+            background-color: rgb(99, 169, 238);
+            box-shadow: 10px 5px 10px 5px rgb(140, 140, 140);
+            border-radius: 10px;
+            padding: 40px;
+            
+            
+          
+            
+        }
+        .email3{
+            padding: 30px;
+
+            
+        }
+        input{
+            padding-right: 20px;
+            padding-top: 5px;
+        }
+        h1{
+           text-align: center;
+           padding-bottom: 40px;
+           font-family:Arial, Helvetica, sans-serif;
+        }
+        #err{
+            color: rgb(255, 19, 19);
+        }
+        input{
+            border-radius: 5px;
+            border: 1px solid grey;
+            padding:10px;
+            padding-left: 30px;
+            font-size: 1rem;
+        }
+        label{
+            font-size: 1.5rem;
+            font-family:monospace;
+        }
+        button{
+            margin: 2rem;
+            padding: 10px;
+            padding-left: 50px;
+            padding-right: 50px;
+            background-color: rgb(32, 222, 32);
+            border-radius: 7px;
+            border: 1px solid rgb(2, 2, 2);
+        }
+
+
+
+
+
+
+
+    </style>
+        
+</head>
+<body>
+    <main>
+    <div class="email">
+        <h1>EMAIL VALIDATION</h1>
+       
+            <div class="email1"><label for="em">EMAIL:</label><br>
+            <input type="email" spellcheck="false" id="em" onkeyup="validEmail()"></div>
+            <span id="err"></span>
+            
+           <div class="email3"><label for="password">PASSWORD:</label><br>
+            <input type="password"></div>
+            <div>
+                <button>SUBMIT</button>
+            </div>
+       
+
+
+    </div>
+    </main>
+
+    <script>
+        var emailField= document.getElementById("em");
+        var emailError= document.getElementById("err");
+        
+        function validEmail(){
+            if(!emailField.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+                emailError.innerHTML="Please Enter valid email";
+                emailField.style.backgroundColor="rgb(255, 19, 19)";
+                return false;
+
+            }
+            emailError.innerHTML="";
+            emailField.style.backgroundColor="rgba(12, 245, 12, 0.259)";
+            return true;
+
+        
+        
+        }
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
